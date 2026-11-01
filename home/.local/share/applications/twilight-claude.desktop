@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Claude Code
+GenericName=AI coding assistant
+Comment=Claude Code in a terminal, with your MCP servers
+Icon=twilight-claude
+Exec=@HOME@/.config/hypr/scripts/claude.sh
+Categories=Development;
+Keywords=claude;ai;assistant;mcp;
+StartupWMClass=org.kde.konsole
+OnlyShowIn=Hyprland;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+GenericName=Terminal
+Comment=Konsole with the Twilight look. Right-click for Copy / Paste.
+Icon=utilities-terminal
+Exec=konsole --profile Twilight
+Categories=System;TerminalEmulator;
+Keywords=terminal;console;shell;konsole;
+StartupWMClass=org.kde.konsole
+OnlyShowIn=Hyprland;

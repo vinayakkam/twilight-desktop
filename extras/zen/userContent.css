@@ -1,0 +1,6 @@
+/* Twilight: dark new-tab page to match the desktop (dark mode only). */
+@media (prefers-color-scheme: dark) {
+  @-moz-document url("about:newtab"), url("about:home"), url("about:blank") {
+    body { background-color: #0d1428 !important; }
+  }
+}

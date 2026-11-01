@@ -1,0 +1,83 @@
+/* Twilight "Launch" theme for Zen Browser — palette from the desktop
+ * wallpaper. Active when the system prefers dark. Delete this file (plus
+ * userContent.css and user.js) to return to Zen's own look. */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tw-base: #0d1428;
+    --tw-surface: #121b33;
+    --tw-raised: #1c2848;
+    --tw-text: #f1eee6;
+    --tw-subtext: #aeb3c8;
+    --tw-accent: #f2683a;
+    --tw-accent2: #f3b651;
+
+    /* One navy surface for the sidebar, toolbars and the frame around pages. */
+    --zen-main-browser-background: var(--tw-base) !important;
+    --zen-main-browser-background-toolbar: var(--tw-base) !important;
+    --zen-main-browser-background-old: var(--tw-base) !important;
+    --zen-main-browser-background-toolbar-old: var(--tw-base) !important;
+    --zen-themed-toolbar-bg-transparent: var(--tw-base) !important;
+    --zen-themed-toolbar-bg: var(--tw-base) !important;
+    --zen-navigator-toolbox-background: transparent !important;
+
+    --zen-primary-color: var(--tw-accent) !important;
+    --zen-colors-primary: var(--tw-raised) !important;
+    --zen-colors-secondary: var(--tw-raised) !important;
+    --zen-colors-tertiary: var(--tw-surface) !important;
+    --zen-colors-border: rgba(255, 255, 255, 0.08) !important;
+
+    --toolbar-bgcolor: var(--tw-surface) !important;
+    --toolbar-color: var(--tw-text) !important;
+    --toolbarbutton-icon-fill: var(--tw-subtext) !important;
+    --toolbar-field-background-color: var(--tw-raised) !important;
+    --toolbar-field-focus-background-color: var(--tw-raised) !important;
+    --toolbar-field-color: var(--tw-text) !important;
+    --toolbar-field-focus-color: var(--tw-text) !important;
+    --tab-selected-textcolor: var(--tw-text) !important;
+    --arrowpanel-background: var(--tw-surface) !important;
+    --arrowpanel-color: var(--tw-text) !important;
+    --arrowpanel-border-color: rgba(255, 255, 255, 0.08) !important;
+    --sidebar-text-color: var(--tw-text) !important;
+    --newtab-background-color: var(--tw-base) !important;
+    --newtab-text-primary-color: var(--tw-text) !important;
+  }
+
+  /* Zen paints its frame/sidebar on these layers; colour them directly. */
+  .zen-browser-generic-background::after,
+  .zen-browser-generic-background::before {
+    background: linear-gradient(160deg, #0d1428 0%, #111a33 55%, #1a1630 100%) !important;
+  }
+
+  /* Tabs: quiet by default, soft ember highlight when selected. */
+  .tabbrowser-tab .tab-background {
+    border-radius: 10px !important;
+  }
+  .tabbrowser-tab:not([selected]):hover .tab-background {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+  .tabbrowser-tab[selected] .tab-background {
+    background: linear-gradient(90deg, rgba(242, 104, 58, 0.22), rgba(242, 104, 58, 0.06)) !important;
+    box-shadow: inset 2px 0 0 var(--tw-accent) !important;
+  }
+  .tabbrowser-tab[selected] .tab-label { color: var(--tw-text) !important; }
+
+  /* Address bar. */
+  .urlbar-background {
+    background-color: var(--tw-raised) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+  #urlbar[focused] .urlbar-background {
+    border-color: rgba(242, 104, 58, 0.55) !important;
+  }
+  .urlbarView-url { color: var(--tw-accent2) !important; }
+
+  /* Rounded page with a faint edge, floating on the navy frame. */
+  .browserSidebarContainer, #tabbrowser-tabpanels browser {
+    border-radius: 10px !important;
+  }
+}
+
+/* The Twilight window bar (amber / green / red dots) handles minimise,
+ * maximise and close, so Zen's own buttons are hidden. */
+.titlebar-buttonbox-container { display: none !important; }

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+GenericName=Twilight Settings
+Comment=Personalise the Twilight desktop: theme, wallpaper, taskbar, windows, power, fingerprint
+Icon=preferences-system
+Exec=qs -c twilight ipc call shell settings
+Categories=Settings;
+Keywords=settings;control;preferences;theme;wallpaper;fingerprint;
+OnlyShowIn=Hyprland;

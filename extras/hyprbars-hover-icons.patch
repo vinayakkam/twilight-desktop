@@ -1,0 +1,14 @@
+diff --git a/hyprbars/barDeco.cpp b/hyprbars/barDeco.cpp
+index e57f77b..1e4655f 100644
+--- a/hyprbars/barDeco.cpp
++++ b/hyprbars/barDeco.cpp
+@@ -440,7 +440,8 @@ void CHyprBar::renderBarButtonsText(Render::CRenderContext& ctx, CBox* barBox, c
+         CBox       pos   = {iconX, iconY, button.iconTex->m_size.x, button.iconTex->m_size.y};
+         pos.round(); // snap to whole pixels, otherwise the icon is sampled at a half-pixel offset and blurs
+ 
+-        if (!ICONONHOVER || (ICONONHOVER && m_iButtonHoverState > 0))
++        // Twilight patch: with icon_on_hover, only the hovered button shows its icon.
++        if (!ICONONHOVER || (m_iButtonHoverState & (1 << i)) != 0)
+             g_pHyprOpenGL->renderTexture(ctx, button.iconTex, pos, {.a = a});
+         offset += scaledButtonsPad + scaledButtonSize;
+ 
